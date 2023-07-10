@@ -1,0 +1,1 @@
+var game2;!function(n){var a=function(){function n(){}return n.randomFloat=function(n,a){return n+(a-n)*Math.random()},n.randomInt=function(a,r){var t=Math.floor(n.randomFloat(a,r));return t==r&&(t=a),t},n}();n.MyUtils=a}(game2||(game2={}));

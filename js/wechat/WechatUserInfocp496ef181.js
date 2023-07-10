@@ -1,0 +1,1 @@
+var touch;!function(t){var i=function(){return function(){this.openId="",this.avatarUrl="",this.province="",this.city="",this.country="",this.gender=0,this.language="",this.nickName=""}}();t.WechatUserInfo=i}(touch||(touch={}));

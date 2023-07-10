@@ -1,0 +1,1 @@
+var AdflyCpl=function(){function n(){}return n.isEventInCpl=function(n){return this.events.indexOf(n)>-1},n.events=["success_landing","play_single3","play_single5","play_single10","play_single20","play_single30","play_single50","play_single100","play_single150","play_single200"],n}();

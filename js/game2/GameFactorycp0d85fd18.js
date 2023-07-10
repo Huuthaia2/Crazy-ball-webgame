@@ -1,0 +1,1 @@
+var game2;!function(n){var e=function(){function n(){}return n.prepareObstacle=function(){},n.prepareBuilding=function(){},n.prepareAccBlock=function(){},n.preparePlane=function(){},n}();n.GameFactory=e}(game2||(game2={}));
