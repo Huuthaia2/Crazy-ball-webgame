@@ -20,126 +20,434 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 </head>
 
-<body>
-	<!-- FB设置Start	 -->
-<!--
-	<script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
-	<script type="text/javascript" src="FBIndex.js"></script>
--->
-	<script src="sdk.minigame.vip/js/1.1/minigame.js?t=1680161113"></script>
-	<!-- <script type="text/javascript" src="FBIndex.js"></script> -->
-	<!-- <script type="text/javascript" src="GameSetting.js"></script> -->
-	<!-- FB设置end	 -->
-
-
-
-	<!--以下引用了常用类库，如果不使用，可以删除-->
-
-	<!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
-	<script type="text/javascript" src="libs/laya.corecp805f7bf7.js"></script>
-	<!--提供了微信小游戏的适配-->
-	<!-- <script type="text/javascript" src="libs/laya.wxmini.js"></script> -->
-	<!--封装了webgl渲染管线，如果使用webgl渲染，可以在初始化时调用Laya.init(1000,800,laya.webgl.WebGL);-->
-	<script type="text/javascript" src="libs/laya.webglcp961d6594.js"></script>
-	<!--是动画模块，包含了swf动画，骨骼动画等-->
-	<script type="text/javascript" src="libs/laya.anicp42d6c902.js"></script>
-	<!--提供了制作UI的各种组件实现-->
-	<script type="text/javascript" src="libs/laya.uicpdfb1e6bf.js"></script>
-	<script type="text/javascript" src="libs/laya.htmlcpe333b940.js"></script>
-	<!--提供LayaAir3D接口-->
-	<script type="text/javascript" src="libs/laya.d3cp3a7d6642.js"></script>	
-	<!-- <script type="text/javascript" src="libs/ch-obfuscated.js"></script> -->
-	 <!--<script type="text/javascript" src="libs/promise.js"></script> -->
-	<!--用户自定义顺序文件添加到这里-->
-	<!--jsfile--Custom-->
-	<!--jsfile--Custom-->
-	<!--自定义的js(src文件夹下)文件自动添加到下面jsfile模块标签里面里-->
-	<!--删除标签，ide不会自动添加js文件，请谨慎操作-->
-	<!--jsfile--startTag-->
-	<script src="js/wechat/WechatUserInfocp496ef181.js"></script>
-	<script src="js/wechat/WechatSDKcp4fa280bc.js"></script>
-	<script src="js/wechat/SoundManagercp142aaf2e.js"></script>
-	<script src="js/sdkhelper/TAHelpercpfb5a2bbb.js"></script>
-	<script src="js/sdkhelper/SdkHelpercp721c4bf7.js"></script>
-	<script src="js/sdkhelper/QzSdkcp677cd2cd.js"></script>
-	<script src="js/sdkhelper/PayInterfacecp23ad3a4a.js"></script>
-	<script src="js/sdkhelper/PayHelpercp815d0e18.js"></script>
-	<script src="js/sdkhelper/MiniGameSdkHelpercp657207b4.js"></script>
-	<script src="js/sdkhelper/IronSourceHelpercp51d7566b.js"></script>
-	<script src="js/sdkhelper/FacebookHelpercpa13b13e5.js"></script>
-	<script src="js/sdkhelper/EventLoggercpecb57b35.js"></script>
-	<script src="js/sdkhelper/AdflyCplcp11b2b574.js"></script>
-	<script src="js/game2/MyUtilscpfa41d56a.js"></script>
-	<script src="js/game2/MovingActioncpdccdad8d.js"></script>
-	<script src="js/game2/GameWorldcpde09d768.js"></script>
-	<script src="js/game2/GameRenderercp8c194220.js"></script>
-	<script src="js/game2/GameFactorycp0d85fd18.js"></script>
-	<script src="js/game2/GameControlcp7de88e52.js"></script>
-	<script src="js/game2/GameConfig2cp037a7a89.js"></script>
-	<script src="js/game2/AssetLoadercpd0c5a1dc.js"></script>
-	<script src="js/game/WorldRankItemDatacp6af94831.js"></script>
-	<script src="js/game/TaskManagercp0aa9985d.js"></script>
-	<script src="js/game/SkinManagercpfe8a901c.js"></script>
-	<script src="js/game/ObjectDefinecp1a7f2634.js"></script>
-	<script src="js/game/GameUtilscpf007370f.js"></script>
-	<script src="js/game/GameScenecp0286da9b.js"></script>
-	<script src="js/game/GameFactorycp9e843828.js"></script>
-	<script src="js/game/GameEventcpdc0ae89a.js"></script>
-	<script src="js/game/GameDefinecp9c565895.js"></script>
-	<script src="js/game/GameConfigcp0a77437f.js"></script>
-	<script src="js/base/TimeUtilcp0adec21d.js"></script>
-	<script src="js/base/Poolcp38be9862.js"></script>
-	<script src="js/base/MathUtilcpe090acb0.js"></script>
-	<script src="js/base/IDestoryablecp41df416a.js"></script>
-	<script src="js/base/HttpPostcp4b073e88.js"></script>
-	<script src="js/base/GameBaseDatacpbe20e93d.js"></script>
-	<script src="js/base/Configcp5efa8396.js"></script>
-	<script src="js/base/BaseImagecp2799b7d7.js"></script>
-	<script src="js/GameConfigcpbfaf42f4.js"></script>
-	<script src="js/base/Objectablecpa6de6008.js"></script>
-	<script src="js/ui/layaUI.max.allcpa6e846ea.js"></script>
-	<script src="js/base/Noticecpf391e34c.js"></script>
-	<script src="js/game/BallScriptcp52d5cc1d.js"></script>
-	<script src="js/game/Buttoncp6fe019a1.js"></script>
-	<script src="js/game/CurvedGlitterMaterialcp24c7f4f4.js"></script>
-	<script src="js/game/CustomMaterialcpe25eccba.js"></script>
-	<script src="js/game/GameDatacp3b772024.js"></script>
-	<script src="js/game/GameModulecp4193526e.js"></script>
-	<script src="js/game/MatchPlayerDatacp6f323c98.js"></script>
-	<script src="js/game2/GameBlockcpcfb870cf.js"></script>
-	<script src="js/game2/AccelerateBlockcpe553e553.js"></script>
-	<script src="js/game2/BallControlcp7f326380.js"></script>
-	<script src="js/game2/BuildingBlockcp59c4195e.js"></script>
-	<script src="js/game2/ObstacleBlockcp7227307a.js"></script>
-	<script src="js/game2/ComposedObstaclecp281fa614.js"></script>
-	<script src="js/game2/DeadEffectcp806fde59.js"></script>
-	<script src="js/game2/EventCentercpf5f6e324.js"></script>
-	<script src="js/game2/PlaneBlockcp6fa67557.js"></script>
-	<script src="js/view/AwardDialogcpd3f0ed1c.js"></script>
-	<script src="js/view/GameResultViewcp00f296e0.js"></script>
-	<script src="js/view/GameReviveDialogcp23b4960e.js"></script>
-	<script src="js/view/GameViewcp221c685e.js"></script>
-	<script src="js/view/IndexViewcpf00f0104.js"></script>
-	<script src="js/view/MatchDialogcp6abd411b.js"></script>
-	<script src="js/view/MatchItemcpce89a739.js"></script>
-	<script src="js/view/NewAwardDialogcpcbf6cd45.js"></script>
-	<script src="js/view/PageViewcpb8c7f4b4.js"></script>
-	<script src="js/view/RewardTipViewcp20339318.js"></script>
-	<script src="js/view/SettingDialogcp9a1988b4.js"></script>
-	<script src="js/view/SkinDialogcp0581cb93.js"></script>
-	<script src="js/view/SprintStateViewcp057d828d.js"></script>
-	<script src="js/view/TipDialogcp5760d006.js"></script>
-	<!--jsfile--endTag-->
-
-	<!--启动类添加到这里-->
-	<!--jsfile--Main-->
-	<script src="js/LayaAir3Dcpb7d8517c.js"></script>
-	<!--jsfile--Main-->
-	<script>
-
-	</script>
+<body> 
 </body>
+<style>
+    /*主题颜色设置*/
+    :root{
+        --theme-color:#000;
+        --theme-color-secondary:#999; /*该主题暂无用该变量*/
+        --theme-color-primary:#4582FF;
+        --theme-background:#fff;
+        --theme-background-secondary:#fff;
+        --theme-content-background:#fff;
+        --border-radius: 8px;
+        --border-radius-sm: 12px;
+        --border-radius-lg: 15px;
+        --font-size-sm: 12px;
+        --font-size-lg: 18px;
+        --font-size-xl: 20px;
+        --play-btn-bg: #fff;
+        --play-btn-color: #fff;
+        --play-btn-padding-top-bottom: 4px;
+        --play-btn-padding-left-right: 24px;
+    }
+    /*全局基本样式设置*/
+    body{
+        background-color: var(--theme-background);
+        font-family: Helvetica;
+    }
+    
+    .play-btn {
+        display: inline-block;
+        text-align: center;
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        line-height: 17px;
+        color: var(--play-btn-color);
+        border-radius: var(--border-radius-sm);
+        background-color: var(--play-btn-bg);
+        padding: var(--play-btn-padding-top-bottom) var(--play-btn-padding-left-right);
+    }
+    .play-btn.is-primary {
+        background-color: var(--theme-color-primary);
+    }
+    
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%
+      }
+    
+      .globalMain {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh
+      }
+    
+      .globalMain:after {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        content: ""
+      }
+    
+      .divUrl {
+        display: none;
+        overflow: hidden;
+        z-index: 4;
+        width: 100vw;
+        height: 0;
+        font-weight: 800;
+        font-size: 20px;
+        color: #747474;
+        transition: height .5s
+      }
+    
+      .mainStyle {
+        display: flex;
+        overflow-x: hidden;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: calc(100vh - 125px)
+      }
+    
+      .clickEnlarge:active {
+        -webkit-tap-highlight-color: transparent;
+        animation: clickEnlarge 0.2s linear;
+      }
+    
+      @keyframes clickEnlarge {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+        }
+    
+        100% {
+          transform: scale(1.4);
+          box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+        }
+      } 
+      .display-center-center{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+    </style>
+    
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+    <style>
+        .dialog[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 200;
+            background:var(--theme-background);
+        }
 
+        #adSenseArea[data-v-7e32e512] {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 50px;
+            max-height: 80px;
+            text-align: center;
+        }
+
+        #iframeShow[data-v-7e32e512] {
+            z-index: 998;
+            border: 0 solid black !important;
+        }
+
+        .iframePosition[data-v-7e32e512] {
+            display: flex;
+            justify-content: center;
+        }
+
+        .closeStyle[data-v-7e32e512] {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 999;
+        }
+
+        #playPage[data-v-7e32e512] {
+            max-width: 100vw;
+            min-height: 98vh;
+            max-height: 100vh;
+            background: #fff;
+        }
+
+        #playPage[data-v-7e32e512] .el-loading-mask {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #playPage[data-v-7e32e512] .el-loading-spinner .circular {
+            display: none;
+        }
+
+        .loadingLayout[data-v-7e32e512] {
+            display: flex;
+            position: fixed;
+            right: calc(50vw - 378px);
+            top: 0;
+            bottom: 0;
+            z-index: 201;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 756px;
+        }
+
+        .landscapeLoadingLayout[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 201;
+        }
+
+        .whirlTip[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 999;
+            background-color: rgb(0, 0, 0, 0.7);
+            background-image: url(/static/images/play/whirlTip.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 157.5px 125px;
+        }
+
+        .stage[data-v-7e32e512] {
+            margin: auto;
+            min-width: 320px;
+            max-width: 375px;
+        }
+
+        .landscape[data-v-7e32e512] {
+            margin: auto;
+            min-width: 568px;
+            max-width: 667px;
+        }
+
+        .landscape>div[data-v-7e32e512]> :first-child {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            filter: blur(4px);
+            transform: scale(1.2);
+        }
+
+        .landscape>div[data-v-7e32e512]> :last-child {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        .landscapeCtx[data-v-7e32e512] {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .verticalStage[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background:var(--theme-background);
+        }
+
+        .verticalStage>div[data-v-7e32e512] {
+            margin: auto;
+            min-width: 320px;
+            max-width: 375px;
+        }
+
+        .white[data-v-7e32e512] {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-track {
+            border-radius: 2px;
+            background: #fff;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #bfbfbf;
+        }
+
+        .scrollbar[data-v-7e32e512]::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+        .back{
+            --back-background: #222733;
+            height: 50px;
+            background-color: var(--back-background);
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 20px;
+        }
+    .trembling {
+      animation: trembling 3s linear infinite backwards;
+      -webkit-animation: trembling 3s linear infinite backwards;
+      -moz-animation: trembling 3s linear infinite backwards
+    }
+
+    @-webkit-keyframes trembling {
+      26% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+
+      28% {
+        transform: rotate(-2deg) scale(1.04);
+        -webkit-transform: rotate(-2deg) scale(1.04)
+      }
+
+      32% {
+        transform: rotate(1deg) scale(1.01);
+        -webkit-transform: rotate(1deg) scale(1.01)
+      }
+
+      34% {
+        transform: rotate(-2deg) scale(1.02);
+        -webkit-transform: rotate(-2deg) scale(1.02)
+      }
+
+      36% {
+        transform: rotate(3deg) scale(1);
+        -webkit-transform: rotate(3deg) scale(1)
+      }
+
+      39% {
+        transform: rotate(-1deg) scale(1);
+        -webkit-transform: rotate(-1deg) scale(1)
+      }
+
+      44% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+    }
+
+    @keyframes trembling {
+      26% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+
+      28% {
+        transform: rotate(-2deg) scale(1.04);
+        -webkit-transform: rotate(-2deg) scale(1.04)
+      }
+
+      32% {
+        transform: rotate(1deg) scale(1.01);
+        -webkit-transform: rotate(1deg) scale(1.01)
+      }
+
+      34% {
+        transform: rotate(-2deg) scale(1.02);
+        -webkit-transform: rotate(-2deg) scale(1.02)
+      }
+
+      36% {
+        transform: rotate(3deg) scale(1);
+        -webkit-transform: rotate(3deg) scale(1)
+      }
+
+      39% {
+        transform: rotate(-1deg) scale(1);
+        -webkit-transform: rotate(-1deg) scale(1)
+      }
+
+      44% {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1)
+      }
+    }        
+    </style>
+<div data-server-rendered="true">
+	<div id="__layout">
+		<div id="Outermost" data-v-e0517636="">
+			<div id="playPage" data-v-7e32e512="" data-v-e0517636="">
+				<div id="stageCtx" style="position:fixed;z-index:0;" data-v-7e32e512="">
+					<div data-v-7e32e512="">   
+										<style>
+										  .loadFullScreen[css-loadFullScreen] {
+											position: fixed;
+											right: 0;
+											left: 0;
+											top: 0;
+											bottom: 0;
+											z-index: 201;
+											width: 100vw;
+											background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+										  }
+										
+										</style>                                    
+					</div>
+					<div id="dialog" class="dialog" data-v-7e32e512="" style="background-color: black;">
+						<div style="visibility: visible;" class="iframePosition" data-v-7e32e512="">
+							<iframe id="iframeShow" allowfullscreen="" style="border: none; width: calc(469.688px); height: calc((931px - 2rem) - 0px); margin: 1rem 0px;" src="indexz.html" __idm_id__="245761"> </iframe>
+						</div>
+					</div>
+				</div>
+				<div id="whiteScreen" class="white" style="z-index:-1;" data-v-7e32e512=""></div>
+				<!-- end banner -->
+				<div style="display:none" class="whirlTip" id="whirlTip" data-v-7e32e512=""></div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- Mirrored from crazy-ball.apps.minigame.vip/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Jul 2023 09:23:26 GMT -->
 </html>
